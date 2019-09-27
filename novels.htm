@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+ 
+<head>
+   <title> vowels.html </title>
+
+   <style>
+     #record{ padding:5px; background: gray; border: 1px solid blue; margin:10px; }
+   </style>
+
+</head>
+
+
+<body style = "background-color:lightblue">
+      <h2 style="text-align:center;color:black"> Takes in a string and return an array with the number of vowels and the duplicates </h2>
+      <div id="destination"></div>
+
+      <script type="text/javascript">
+        function getVowels(string) { 
+          
+         var char_array = string.split(''); 
+         
+         //turn the input into a string 
+         
+         var output = '';
+         var vowelz = ['a','e','i','o','u'];
+         
+         //loop through the string
+         var vowelsCount = 0;
+         var v=0;
+         for(v=0;v<5;v++)
+         { 
+                 vowelsCount = 0;
+                
+             for (var i=0; i<string.length ; i++) { 
+               
+               //if a vowel, add to vowel count
+                 if (char_array[i] == vowelz[v]) {  vowelsCount += 1;    
+                } 
+             } 
+             output += '<div id="record">('+vowelz[v]+' , '+vowelsCount+') </div><br/>';
+         }
+         output += '<div id="record">('+string+') </div><br/>';
+       
+        return output;
+       } 
+          var  string= prompt("Enter a string");  
+       htmll = getVowels(string); 
+       document.getElementById('destination').innerHTML=htmll;
+       </script>
+</body>
+
+</html> 
